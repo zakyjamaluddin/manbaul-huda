@@ -1,0 +1,9 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Alihkan semua lalu lintas domain utama langsung masuk ke folder public
+    RewriteRule ^$ public/ [L]
+
+    # Alihkan semua rute URL dalam web agar dieksekusi lewat folder public/index.php
+    RewriteRule ((?s).*) public/$1 [L]
+</IfModule>
