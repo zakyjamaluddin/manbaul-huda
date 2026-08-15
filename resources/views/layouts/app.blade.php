@@ -314,6 +314,166 @@
                 </button>
             </div>
         </div>
+
+        <!-- MOBILE MENU -->
+<div
+    x-show="mobileMenuOpen"
+    x-transition
+    class="lg:hidden border-t border-slate-100 bg-white shadow-lg"
+>
+    <div class="px-4 py-4 space-y-1">
+
+        <a
+            href="{{ route('home') }}"
+            @click="mobileMenuOpen = false"
+            class="block px-4 py-3 rounded-lg text-sm font-semibold text-slate-700 hover:bg-brand-50 hover:text-brand-700"
+        >
+            Beranda
+        </a>
+
+        <!-- PROFIL -->
+        <div x-data="{ open: false }">
+            <button
+                @click="open = !open"
+                class="w-full flex items-center justify-between px-4 py-3 rounded-lg text-sm font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-700"
+            >
+                <span>Profil</span>
+                <i
+                    class="fa-solid fa-chevron-down text-xs transition"
+                    :class="{ 'rotate-180': open }"
+                ></i>
+            </button>
+
+            <div x-show="open" x-transition class="pl-4 space-y-1">
+                <a
+                    href="{{ route('home') }}#sejarah"
+                    @click="mobileMenuOpen = false"
+                    class="block px-4 py-2.5 text-sm text-slate-600 hover:text-brand-700"
+                >
+                    Sejarah Singkat
+                </a>
+
+                <a
+                    href="{{ route('home') }}#visi-misi"
+                    @click="mobileMenuOpen = false"
+                    class="block px-4 py-2.5 text-sm text-slate-600 hover:text-brand-700"
+                >
+                    Visi & Misi
+                </a>
+
+                <a
+                    href="{{ route('home') }}#sambutan"
+                    @click="mobileMenuOpen = false"
+                    class="block px-4 py-2.5 text-sm text-slate-600 hover:text-brand-700"
+                >
+                    Sambutan Kepala
+                </a>
+            </div>
+        </div>
+
+        <!-- AKADEMIK -->
+        <div x-data="{ open: false }">
+            <button
+                @click="open = !open"
+                class="w-full flex items-center justify-between px-4 py-3 rounded-lg text-sm font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-700"
+            >
+                <span>Akademik & Program</span>
+                <i
+                    class="fa-solid fa-chevron-down text-xs transition"
+                    :class="{ 'rotate-180': open }"
+                ></i>
+            </button>
+
+            <div x-show="open" x-transition class="pl-4 space-y-1">
+                <a
+                    href="{{ isset($globalProfil->kaldikBlog) ? route('blog.show', $globalProfil->kaldikBlog->slug) : route('blog.index') }}"
+                    @click="mobileMenuOpen = false"
+                    class="block px-4 py-2.5 text-sm text-slate-600 hover:text-brand-700"
+                >
+                    Kalender Pendidikan
+                </a>
+
+                <a
+                    href="{{ isset($globalProfil->programUnggulanBlog) ? route('blog.show', $globalProfil->programUnggulanBlog->slug) : route('blog.index') }}"
+                    @click="mobileMenuOpen = false"
+                    class="block px-4 py-2.5 text-sm text-slate-600 hover:text-brand-700"
+                >
+                    Program Unggulan
+                </a>
+
+                <a
+                    href="{{ isset($globalProfil->ekstrakurikulerBlog) ? route('blog.show', $globalProfil->ekstrakurikulerBlog->slug) : route('blog.index') }}"
+                    @click="mobileMenuOpen = false"
+                    class="block px-4 py-2.5 text-sm text-slate-600 hover:text-brand-700"
+                >
+                    Ekstrakurikuler & Keagamaan
+                </a>
+            </div>
+        </div>
+
+        <!-- KESISWAAN -->
+        <div x-data="{ open: false }">
+            <button
+                @click="open = !open"
+                class="w-full flex items-center justify-between px-4 py-3 rounded-lg text-sm font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-700"
+            >
+                <span>Kesiswaan</span>
+                <i
+                    class="fa-solid fa-chevron-down text-xs transition"
+                    :class="{ 'rotate-180': open }"
+                ></i>
+            </button>
+
+            <div x-show="open" x-transition class="pl-4 space-y-1">
+                <a
+                    href="{{ route('kesiswaan.prestasi') }}"
+                    @click="mobileMenuOpen = false"
+                    class="block px-4 py-2.5 text-sm text-slate-600 hover:text-brand-700"
+                >
+                    Prestasi Siswa
+                </a>
+
+                <a
+                    href="{{ route('kesiswaan.agenda') }}"
+                    @click="mobileMenuOpen = false"
+                    class="block px-4 py-2.5 text-sm text-slate-600 hover:text-brand-700"
+                >
+                    Agenda Madrasah
+                </a>
+
+                <a
+                    href="{{ route('kesiswaan.guru') }}"
+                    @click="mobileMenuOpen = false"
+                    class="block px-4 py-2.5 text-sm text-slate-600 hover:text-brand-700"
+                >
+                    Tenaga Pendidik & Guru
+                </a>
+            </div>
+        </div>
+
+        <!-- GALERI -->
+        <a
+            href="{{ route('gallery') }}"
+            @click="mobileMenuOpen = false"
+            class="block px-4 py-3 rounded-lg text-sm font-semibold text-slate-700 hover:bg-brand-50 hover:text-brand-700"
+        >
+            Galeri
+        </a>
+
+        <!-- PPDB -->
+        <div class="pt-3">
+            <a
+                href="{{ route('ppdb.index') }}"
+                @click="mobileMenuOpen = false"
+                class="flex items-center justify-center gap-2 w-full px-5 py-3 text-sm font-semibold text-white bg-brand-700 hover:bg-brand-800 rounded-full shadow-md"
+            >
+                <span>Pendaftaran (PPDB)</span>
+                <i class="fa-solid fa-arrow-right text-xs text-gold-300"></i>
+            </a>
+        </div>
+
+    </div>
+</div>
     </header>
 
     <!-- MAIN CONTENT -->
