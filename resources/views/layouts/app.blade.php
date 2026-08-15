@@ -170,12 +170,20 @@
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-brand-700 selection:text-white" x-data="{ mobileMenuOpen: false, activeTab: 'sejarah', modalOpen: false, modalContent: ''  }">
 
-    <!-- TOP ANNOUNCEMENT BAR (DENGAN INSTAGRAM) -->
+    @php
+    $currentMonth = now()->month; // 1 = Januari, 5 = Mei
+    $currentYear = now()->year;
+    $nextYear = $currentYear + 1;
+@endphp
+
+{{-- 🟢 HANYA TAMPIL DI BULAN JANUARI SAMPAI MEI (BULAN 1 S/D 5) --}}
+@if($currentMonth >= 1 && $currentMonth <= 5)
+    <!-- TOP ANNOUNCEMENT BAR -->
     <div class="bg-brand-900 text-white text-xs py-2 px-4 border-b border-brand-800">
         <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
             <div class="flex items-center gap-4">
                 <span class="inline-flex items-center gap-1.5 font-medium text-gold-300">
-                    <i class="fa-solid fa-graduation-cap"></i> PPDB T.A. 2025/2026 Telah Dibuka!
+                    <i class="fa-solid fa-graduation-cap"></i> PPDB T.A. {{ $currentYear }}/{{ $nextYear }} Telah Dibuka!
                 </span>
             </div>
             <div class="flex items-center gap-6">
@@ -200,6 +208,7 @@
             </div>
         </div>
     </div>
+@endif
 
     <!-- MAIN NAVBAR (5 MENU UTAMA + CTA PPDB) -->
     <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm transition-all duration-300">
