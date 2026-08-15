@@ -18,7 +18,7 @@ Panduan berikut ditujukan untuk server dengan sistem operasi **Linux**.
 Clone repository ke server:
 
 ```bash
-git clone https://github.com/USERNAME/REPOSITORY.git .
+git clone https://github.com/zakyjamaluddin/manbaul-huda.git .
 ```
 
 ### 2. Cek Versi PHP
