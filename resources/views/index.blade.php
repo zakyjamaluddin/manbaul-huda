@@ -411,14 +411,14 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="grid lg:grid-cols-12 gap-12 items-stretch">
                 <div class="lg:col-span-5 space-y-6">
-                    <span class="text-xs font-bold text-gold-400 uppercase bg-gold-500/10 border border-gold-500/30 px-3 py-1 rounded-full">Lokasi</span>
+                    <span class="text-xs font-bold text-gold-400 uppercase bg-gold-600/10 border border-gold-500/30 px-3 py-1 rounded-full">Lokasi</span>
                     <h2 class="text-3xl font-extrabold text-white">Hubungi {{ $profil->nama_madrasah ?? "MI Manba'ul Huda" }}</h2>
                     <p class="text-slate-400 text-sm leading-relaxed">
                             Kami siap memberikan informasi selengkapnya terkait pendaftaran, program madrasah, dan layanan pendidikan. Silakan hubungi kami atau kunjungi lokasi madrasah.
                     </p>
                     <div class="space-y-4 pt-2">
                             <div class="flex items-start gap-4 p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-gold-500/40 transition">
-                                <div class="w-10 h-10 rounded-xl bg-gold-500/20 text-gold-400 flex items-center justify-center shrink-0">
+                                <div class="w-10 h-10 rounded-xl bg-gold-600/20 text-gold-400 flex items-center justify-center shrink-0">
                                     <i class="fa-solid fa-location-dot text-lg"></i>
                                 </div>
                                 <div>
